@@ -146,7 +146,7 @@ function New-WebEnvironment
         # array of gulp or npm packages to be installed in the dev environment
         [Parameter(Mandatory=$false, position=9)]
         [string[]]
-        $DevGulpPackages = @('gulp','gulp-concat','gulp-uglify','gulp-sass','browser-sync','gulp-cssnano', 'del','typescript'),
+        $DevGulpPackages = @('gulp','gulp-useref','gulp-uglify','gulp-sass','browser-sync','gulp-cssnano', 'del','typescript', 'gulp-if', 'gulp-sourcemaps', 'run-sequence','gulp-autoprefixer'),
 
         #array of gulp or npm packages to be installed in the dependency environment
         [Parameter(Mandatory=$false, position=10)]
@@ -243,7 +243,7 @@ var  useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
 var prefixer = require('gulp-autoprefixer');
 var gulpif = require('gulp-if');
-var nano = require('gulp.cssnano');
+var nano = require('gulp-cssnano');
 var sourcemap = require('gulp-sourcemaps');
 var del = require('del');
 var runSequence = require('run-sequence');
